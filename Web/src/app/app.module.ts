@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { SecureComponent } from './secure.component';
 import { LoginComponent } from './login.component';
 import { AdalService, AdalGuard } from '../../node_modules/adal-angular4';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AdalService, AdalGuard } from '../../node_modules/adal-angular4';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot([
       { path: '', component: SecureComponent, canActivate: [AuthGuard] },
       { path: 'login', component: LoginComponent }
